@@ -11,5 +11,9 @@ func main() {
 		fmt.Println("GET /")
 		fmt.Fprintf(w, "Hello from Go")
 	})
+	http.HandleFunc("/login", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Println("GET /login")
+		fmt.Fprintf(w, "login from Go")
+	})
 	http.ListenAndServe(":8000", nil)
 }
